@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Product - Shopify Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>My Awesome Store</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Collections</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="product-page-container container">
+        <div class="product-layout">
+            <!-- Column 1: Product Gallery -->
+            <section class="product-gallery-section">
+                <div class="main-image-wrapper">
+                    <img id="mainProductImage" src="img1.webp" alt="Main Product Image">
+                    <!-- Bonus: Zoom Icon (functionality not fully implemented) -->
+                    <button class="zoom-btn" aria-label="Zoom image" title="Zoom (Bonus Feature)">🔍</button>
+                </div>
+                <div class="thumbnail-carousel">
+                    <div class="thumbnails">
+                        <img src="img2.webp" alt="Product Thumbnail 1" class="thumbnail active" data-fullimage="img2.webp">
+                        <img src="img3.jpeg" alt="Product Thumbnail 2" class="thumbnail" data-fullimage="img3.jpeg">
+                        <img src="img6.jpg" alt="Product Thumbnail 3" class="thumbnail" data-fullimage="img6.jpg">
+                        <img src="img5.jpg" alt="Product Thumbnail 4" class="thumbnail" data-fullimage="img5.jpg">
+                        <img src="img1.webp" alt="Product Thumbnail 5" class="thumbnail" data-fullimage="img1.webp">
+                        <img src="img4.jpg" alt="Product Thumbnail 6" class="thumbnail" data-fullimage="img4.jpg">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Column 2: Product Details & Actions -->
+            <section class="product-info-section">
+                <h2 class="product-title">Premium Versatile T-Shirt</h2>
+                <p class="product-price">$49.99</p>
+                <p class="product-short-desc">The perfect t-shirt for any occasion. Made with high-quality, breathable fabric for ultimate comfort and style.</p>
+
+                <!-- Product Variants -->
+                <div class="variants-section">
+                    <div class="variant-group">
+                        <label for="color-selector">Color: <span id="selectedColorName">Red</span></label>
+                        <div id="color-selector" class="color-swatches">
+                            <button class="swatch active" data-color="Red" data-color-value="red" aria-label="Select Red Color" style="background-color: red;"></button>
+                            <button class="swatch" data-color="Blue" data-color-value="blue" aria-label="Select Blue Color" style="background-color: blue;"></button>
+                            <button class="swatch" data-color="Green" data-color-value="green" aria-label="Select Green Color" style="background-color: green;"></button>
+                            <button class="swatch" data-color="Black" data-color-value="black" aria-label="Select Black Color" style="background-color: black;"></button>
+                        </div>
+                        <button id="compareColorsBtn" class="btn btn-outline btn-small">Compare Colours</button>
+                    </div>
+
+                    <div class="variant-group">
+                        <label for="size-selector">Size: <span id="selectedSizeName">M</span></label>
+                        <div id="size-selector" class="size-options">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                        </div>
+                        <button id="sizeChartBtn" class="btn-link">Size Chart</button>
+                    </div>
+                </div>
+                <p class="selected-variant-display">Selected: Red, M</p>
+
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <label for="quantity" class="sr-only">Quantity</label>
+                        <button class="quantity-btn" data-action="decrease" aria-label="Decrease quantity">-</button>
+                        <input type="number" id="quantity" value="1" min="1" aria-label="Product quantity">
+                        <button class="quantity-btn" data-action="increase" aria-label="Increase quantity">+</button>
+                    </div>
+                    <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Product Bundle Suggestion -->
+        <section class="product-bundle-suggestion full-width-section">
+            <h3>Buy these together & Save!</h3>
+            <div class="bundle-items">
+                <div class="bundle-item">
+                    <img src="img7.jpg" alt="Premium T-Shirt">
+                    <p>Premium T-Shirt</p>
+                    <p class="price">$49.99</p>
+                </div>
+                <span class="plus-icon">+</span>
+                <div class="bundle-item">
+                    <img src="cap.webp" alt="Matching Cap">
+                    <p>Matching Cap</p>
+                    <p class="price">$19.99</p>
+                </div>
+            </div>
+            <div class="bundle-summary">
+                <p>Combined Price: <span id="bundleTotalPrice">$69.98</span></p>
+                <button class="btn btn-secondary">Add Bundle to Cart</button>
+            </div>
+        </section>
+
+        <!-- Tabs for Product Info -->
+        <section class="product-info-tabs-section full-width-section">
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="description">Description</button>
+                <button class="tab-button" data-tab="productInfo">Product Information</button>
+                <button class="tab-button" data-tab="shippingDetails">Shipping Details</button>
+            </div>
+            <div class="tab-content-area">
+                <div id="description" class="tab-content active">
+                    <h4>Full Product Description</h4>
+                    <p>Get ready to embrace next-level fashion with the Get Schwifty Graphic Printed Women's Black Oversized T-shirt. This ingenious piece is here to take your style to infinity and beyond! Picture this: You're soaring through dimensions, grooving to sweet tunes, and feeling as comfortable as floating on a magenta nebula - that's exactly what this oversized tee delivers. Made with premium cotton, it's like wrapping yourself in the comfiest cosmic cloud ever! Now, let's talk about colours. This shirt comes in pitch black, the shade that absorbs light faster than you can say "Wubba Lubba Dub Dub!" It's a hue that matches the depths of space, where stars twinkle and planets dance to the beat of Rick's lab experiments. Match this Official Rick & Morty t-shirt with leggings for a casual cosmic ensemble that captures the essence of interstellar chic. Pair it with sneakers for a look that's ready to venture beyond the stars, just like Rick and Morty. So, cosmic fashionistas, get ready to unleash your inner Rick and Morty fan with this t-shirt. It's time to defy gravity and look fab while doing it!</p>
+                </div>
+                <div id="productInfo" class="tab-content">
+                    <h4>Detailed Product Information</h4>
+                    <ul>
+                        <li><strong>Material:</strong> 100% Combed Cotton</li>
+                        <li><strong>Weight:</strong> 180 GSM</li>
+                        <li><strong>Fit:</strong> Regular Fit</li>
+                        <li><strong>Care Instructions:</strong> Machine wash cold, tumble dry low. Do not bleach.</li>
+                        <li><strong>Origin:</strong> Responsibly Sourced</li>
+                    </ul>
+                </div>
+                <div id="shippingDetails" class="tab-content">
+                    <h4>Shipping & Returns</h4>
+                    <p><strong>Standard Shipping:</strong> 5-7 business days. Free on orders over $50.</p>
+                    <p><strong>Express Shipping:</strong> 2-3 business days. $15 flat rate.</p>
+                    <p><strong>Returns:</strong> Easy 30-day returns. Item must be in new, unworn condition with tags attached.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pair Well With (Complementary Products) -->
+        <section class="complementary-products-section full-width-section">
+            <h3>Pairs Well With</h3>
+            <div class="product-carousel-horizontal">
+                <div class="product-card-small">
+                    <img src="img8.webp" alt="Cool Shorts">
+                    <h4>Cool Shorts</h4>
+                    <p class="price">$35.00</p>
+                    <button class="btn btn-outline btn-small">Add to Cart</button>
+                </div>
+                <div class="product-card-small">
+                    <img src="img9.webp" alt="Stylish Hat">
+                    <h4>Stylish Hat</h4>
+                    <p class="price">$22.50</p>
+                    <button class="btn btn-outline btn-small">Add to Cart</button>
+                </div>
+                <div class="product-card-small">
+                    <img src="img10.webp" alt="Comfy Socks">
+                    <h4>Comfy Socks (3-pack)</h4>
+                    <p class="price">$15.99</p>
+                    <button class="btn btn-outline btn-small">Add to Cart</button>
+                </div>
+                <div class="product-card-small">
+                    <img src="img11.webp" alt="Classic Belt">
+                    <h4>Classic Belt</h4>
+                    <p class="price">$29.00</p>
+                    <button class="btn btn-outline btn-small">Add to Cart</button>
+                </div>
+                 <div class="product-card-small">
+                    <img src="img16.jpg" alt="Classic Belt">
+                    <h4>Poly Rayon Jacket </h4>
+                    <p class="price">$39.00</p>
+                    <button class="btn btn-outline btn-small">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products Section -->
+        <section class="related-products-section full-width-section">
+            <h3>You Might Also Like</h3>
+            <div class="related-products-grid">
+                <div class="product-card-grid">
+                    <div class="product-card-image-wrapper">
+                        <img src="img12.jpg" alt="Another Great Shirt">
+                        <span class="badge new">New</span>
+                    </div>
+                    <h4>Another Great Shirt</h4>
+                    <p class="price">$45.00</p>
+                    <button class="btn btn-outline btn-small">View Product</button>
+                </div>
+                <div class="product-card-grid">
+                    <div class="product-card-image-wrapper">
+                        <img src="img13.webp" alt="Awesome Hoodie">
+                    </div>
+                    <h4>Awesome Hoodie</h4>
+                    <p class="price">$75.99</p>
+                    <button class="btn btn-outline btn-small">View Product</button>
+                </div>
+                <div class="product-card-grid">
+                    <div class="product-card-image-wrapper">
+                        <img src="img14.webp" alt="Cool Jeans">
+                        <span class="badge popular">Popular</span>
+                    </div>
+                    <h4>Cool Jeans</h4>
+                    <p class="price">$89.50</p>
+                    <button class="btn btn-outline btn-small">View Product</button>
+                </div>
+                <div class="product-card-grid">
+                     <div class="product-card-image-wrapper">
+                        <img src="img15.webp" alt="Sporty Jacket">
+                    </div>
+                    <h4>Sporty Jacket</h4>
+                    <p class="price">$120.00</p>
+                    <button class="btn btn-outline btn-small">View Product</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2023 My Awesome Store. All rights reserved.</p>
+            <p>Powered by Vanilla JS</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="sizeChartModal" class="modal" aria-labelledby="sizeChartModalTitle" aria-hidden="true" role="dialog">
+        <div class="modal-overlay" tabindex="-1" data-dismiss="modal"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Close" data-dismiss="modal">×</button>
+            <h3 id="sizeChartModalTitle" class="modal-title">T-Shirt Size Chart</h3>
+            <table>
+                <thead>
+                    <tr><th>Size</th><th>Chest (in)</th><th>Length (in)</th><th>Sleeve (in)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>S</td><td>34-36</td><td>28</td><td>8</td></tr>
+                    <tr><td>M</td><td>38-40</td><td>29</td><td>8.5</td></tr>
+                    <tr><td>L</td><td>42-44</td><td>30</td><td>9</td></tr>
+                    <tr><td>XL</td><td>46-48</td><td>31</td><td>9.5</td></tr>
+                </tbody>
+            </table>
+            <p class="modal-note">Measurements are approximate and may vary slightly.</p>
+        </div>
+    </div>
+
+    <div id="compareColorsModal" class="modal" aria-labelledby="compareColorsModalTitle" aria-hidden="true" role="dialog">
+        <div class="modal-overlay" tabindex="-1" data-dismiss="modal"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Close" data-dismiss="modal">×</button>
+            <h3 id="compareColorsModalTitle" class="modal-title">Compare Colours</h3>
+            <p>Select two or more colours to compare side-by-side.</p>
+            <div class="compare-swatch-options">
+                <!-- Options will be populated by JS from available swatches -->
+            </div>
+            <div class="color-comparison-area">
+                <!-- Selected swatches for comparison will appear here -->
+            </div>
+            <button id="clearComparisonBtn" class="btn btn-outline btn-small">Clear Selection</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
